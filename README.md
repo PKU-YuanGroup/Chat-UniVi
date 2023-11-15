@@ -1,10 +1,13 @@
-# Chat-UniVi: A Unified Vision-Language Model for Image and Video Understanding
+# Chat-UniVi: Unified Visual Representation Empowers Large Language Models with Image and Video Understanding
 
 We introduce Chat-UniVi, a unified vision-language model capable of comprehending and engaging in conversations involving images and videos.
 Specifically, Chat-UniVi uniformly represents images and videos using a collection of dynamic visual tokens.
 This novel representation framework empowers the model to efficiently utilize a limited number of visual tokens to simultaneously capture the spatial details necessary for images and the comprehensive temporal relationship required for videos.
 Besides, we leverage a multi-scale representation that equips large language models to perceive both high-level semantic concepts and low-level visual details.
 
+<div align=center>
+<img src="figures/fig0.png" width="800px">
+</div>
 
 ## 1. Conda environment
 Install packages.
