@@ -1,12 +1,15 @@
 <h2 align="center"> <a href="https://arxiv.org/abs/2311.08046">Chat-UniVi: Unified Visual Representation Empowers Large Language Models with Image and Video Understanding</a></h2>
-<h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.  </h5>
+<h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.</h5>
 
+<h5 align=center>
+  
 [![hf_space](https://img.shields.io/badge/🤗-Open%20In%20Spaces-blue.svg)](https://huggingface.co/Chat-UniVi)
 [![arXiv](https://img.shields.io/badge/Arxiv-2310.01852-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2311.08046)
 [![License](https://img.shields.io/badge/Code%20License-Apache2.0-yellow)](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/LICENSE)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FPKU-YuanGroup%2FChat-UniVi&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitor&edge_flat=false)](https://hits.seeyoufarm.com) <br>
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FPKU-YuanGroup%2FChat-UniVi&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitor&edge_flat=false)](https://hits.seeyoufarm.com)
 [![GitHub issues](https://img.shields.io/github/issues/PKU-YuanGroup/Chat-UniVi?color=critical&label=Issues)](https://github.com/PKU-YuanGroup/LanguageBind/issues?q=is%3Aopen+is%3Aissue)
-[![GitHub closed issues](https://img.shields.io/github/issues-closed/PKU-YuanGroup/Chat-UniVi?color=success&label=Issues)](https://github.com/PKU-YuanGroup/LanguageBind/issues?q=is%3Aissue+is%3Aclosed)  <br>
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/PKU-YuanGroup/Chat-UniVi?color=success&label=Issues)](https://github.com/PKU-YuanGroup/LanguageBind/issues?q=is%3Aissue+is%3Aclosed)
+</h5>
 
 ## 📣 News
 * **[2023/11/15]**  Code are available now! Welcome to **watch** 👀 this repository for the latest updates.
@@ -18,7 +21,7 @@ We employ **a set of dynamic visual tokens** to uniformly represent images and v
 This representation framework empowers the model to efficiently utilize **a limited number of visual tokens** to simultaneously capture **the spatial details necessary for images** and **the comprehensive temporal relationship required for videos**
 
 <div align=center>
-<img src="figures/fig0.png" width="800px">
+<img src="figures/fig0.png" width="500px">
 </div>
 
 ### 🔥 Joint training strategy, making LLMs understand both image and video
@@ -32,7 +35,7 @@ Chat-UniVi is trained on a mixed dataset containing both images and videos, allo
 Extensive experimental results demonstrate that Chat-UniVi, as a unified model, consistently outperforms even existing methods exclusively designed for either images or videos.
 
 <div align=center>
-<img src="figures/fig2.png" width="800px">
+<img src="figures/fig2.png" width="500px">
 </div>
 
 ## ⚡ Demo
@@ -46,44 +49,54 @@ CUDA_VISIBLE_DEVICES=0 uvicorn main_demo:app --host 0.0.0.0 --port 8888
 ```
 
 #### An example of a conversation that includes both the image and the video
+<div align=center>
 <img src="figures/image_video.gif" width="500" />
+</div>
 
 #### An example of a conversation that includes multiple videos
+<div align=center>
 <img src="figures/video_video.gif" width="500" />
+</div>
 
 #### An example of a conversation that includes multiple images
+<div align=center>
 <img src="figures/image_image.gif" width="500" />
+</div>
 
 #### An example of a conversation that includes the video
+<div align=center>
 <img src="figures/video.gif" width="500" />
+</div>
 
 ### With translation API, our model can also support Chinese conversations
+<div align=center>
 <img src="figures/chinese.gif" width="500" />
+</div>
 
 ## 🚀 Main Results
 ### Image understanding
 <div align=center>
-<img src="figures/fig3.png" width="800px">
+<img src="figures/fig3.png" width="500px">
 </div>
 
 ### Video understanding
 <div align=center>
-<img src="figures/fig4.png" width="800px">
+<img src="figures/fig4.png" width="500px">
 </div>
 
 ### ScienceQA
 <div align=center>
-<img src="figures/fig5.png" width="800px">
+<img src="figures/fig5.png" width="500px">
 </div>
 
 ### VideoQA
 <div align=center>
-<img src="figures/fig6.png" width="800px">
+<img src="figures/fig6.png" width="500px">
 </div>
 
 ### Hallucination Evaluation
 <div align=center>
-<img src="figures/fig7.png" width="800px">
+<img src="figures/fig7.png" width="500px">
 </div>
 
 ## 🛠️ Requirements and Installation
@@ -105,7 +118,7 @@ pip install flash-attn --no-build-isolation
 
 
 ## 🗝️ Training & Validating
-The data instruction is in [DATA.md](TRAIN_AND_VALIDATE.md).
+The data instruction is in [DATA.md](DATA.md).
 
 The training instruction is in [TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md).
 
