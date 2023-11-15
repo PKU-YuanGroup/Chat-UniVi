@@ -18,7 +18,7 @@
 
 ### 💡 Unified visual representation for image and video
 We employ **a set of dynamic visual tokens** to uniformly represent images and videos.
-This representation framework empowers the model to efficiently utilize **a limited number of visual tokens** to simultaneously capture **the spatial details necessary for images** and **the comprehensive temporal relationship required for videos**
+This representation framework empowers the model to efficiently utilize **a limited number of visual tokens** to simultaneously capture **the spatial details necessary for images** and **the comprehensive temporal relationship required for videos**.
 
 <div align=center>
 <img src="figures/fig0.png" width="500px">
