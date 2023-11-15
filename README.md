@@ -75,28 +75,49 @@ CUDA_VISIBLE_DEVICES=0 uvicorn main_demo:app --host 0.0.0.0 --port 8888
 
 ## 🚀 Main Results
 ### Image understanding
+Following LLaVA, we report the relative scores to GPT-4 for instruction-following questions.
+
 <div align=center>
 <img src="figures/fig3.png" width="500px">
 </div>
 
 ### Video understanding
+Following Video-ChatGPT, we report the relative scores between the output of the model and the ground truth, with the assistance of GPT. It is worth noting that the results reported in Video-ChatGPT span a range from 0 to 5. To standardize the metrics, we normalize all scores to a scale of 0 to 100.
+
 <div align=center>
 <img src="figures/fig4.png" width="500px">
 </div>
 
 ### ScienceQA
+We report both zero-shot and fine-tuning results on the ScienceQA test set. 
+
 <div align=center>
 <img src="figures/fig5.png" width="500px">
 </div>
 
 ### VideoQA
+We follow the evaluation protocol in Video-ChatGPT, i.e., employing GPT-assisted evaluation to assess the capabilities of models.
+
 <div align=center>
 <img src="figures/fig6.png" width="500px">
 </div>
 
 ### Hallucination Evaluation
+Our model also achieves impressive results in the object hallucination benchmark.
+
 <div align=center>
 <img src="figures/fig7.png" width="500px">
+</div>
+
+## 😍 Visualization
+### Visualization for the image inputs
+<div align=center>
+<img src="figures/fig8.png" width="500px">
+</div>
+
+### Visualization for the video inputs
+<div align=center>
+<img src="figures/fig9.png" width="500px">
 </div>
 
 ## 🛠️ Requirements and Installation
