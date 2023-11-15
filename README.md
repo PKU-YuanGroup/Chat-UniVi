@@ -7,8 +7,8 @@
 [![arXiv](https://img.shields.io/badge/Arxiv-2310.01852-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2311.08046)
 [![License](https://img.shields.io/badge/Code%20License-Apache2.0-yellow)](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/LICENSE)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FPKU-YuanGroup%2FChat-UniVi&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitor&edge_flat=false)](https://hits.seeyoufarm.com)
-[![GitHub issues](https://img.shields.io/github/issues/PKU-YuanGroup/Chat-UniVi?color=critical&label=Issues)](https://github.com/PKU-YuanGroup/LanguageBind/issues?q=is%3Aopen+is%3Aissue)
-[![GitHub closed issues](https://img.shields.io/github/issues-closed/PKU-YuanGroup/Chat-UniVi?color=success&label=Issues)](https://github.com/PKU-YuanGroup/LanguageBind/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub issues](https://img.shields.io/github/issues/PKU-YuanGroup/Chat-UniVi?color=critical&label=Issues)](https://github.com/PKU-YuanGroup/Chat-UniVi/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/PKU-YuanGroup/Chat-UniVi?color=success&label=Issues)](https://github.com/PKU-YuanGroup/Chat-UniVi/issues?q=is%3Aissue+is%3Aclosed)
 </h5>
 
 ## 📣 News
@@ -28,7 +28,7 @@ This representation framework empowers the model to efficiently utilize **a limi
 Chat-UniVi is trained on a mixed dataset containing both images and videos, allowing direct application to tasks involving both mediums without requiring any modifications.
 
 <div align=center>
-<img src="figures/fig1.png" width="800px">
+<img src="figures/fig1.png" width="600px">
 </div>
 
 ### 🤗 High performance, complementary learning with image and video
