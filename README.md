@@ -48,27 +48,29 @@ model_path = [model path]
 CUDA_VISIBLE_DEVICES=0 uvicorn main_demo:app --host 0.0.0.0 --port 8888
 ```
 
-#### An example of a conversation that includes both the image and the video
+### A conversation with both image and video
 <div align=center>
 <img src="figures/image_video.gif" width="500" />
 </div>
 
-#### An example of a conversation that includes multiple videos
+### A conversation includes multiple videos
 <div align=center>
 <img src="figures/video_video.gif" width="500" />
 </div>
 
-#### An example of a conversation that includes multiple images
+### A conversation includes multiple images
 <div align=center>
 <img src="figures/image_image.gif" width="500" />
 </div>
 
-#### An example of a conversation that includes the video
+### A conversation includes the video
 <div align=center>
 <img src="figures/video.gif" width="500" />
 </div>
 
-### With translation API, our model can also support Chinese conversations
+### A conversation in Chinese
+With translation API, our model can also support Chinese conversations. We will add code to support Chinese conversations in future updates.
+
 <div align=center>
 <img src="figures/chinese.gif" width="500" />
 </div>
