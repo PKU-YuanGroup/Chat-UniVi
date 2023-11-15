@@ -1,3 +1,7 @@
+<div align=center>
+<img src="figures/fig10.png" width="350px">
+</div>
+
 <h2 align="center"> <a href="https://arxiv.org/abs/2311.08046">Chat-UniVi: Unified Visual Representation Empowers Large Language Models with Image and Video Understanding</a></h2>
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.</h5>
 
@@ -141,9 +145,8 @@ pip install flash-attn --no-build-isolation
 
 
 ## 🗝️ Training & Validating
-The data instruction is in [DATA.md](DATA.md).
-
-The training instruction is in [TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md).
+* The data instruction is in [DATA.md](DATA.md).
+* The training instruction is in [TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md).
 
 ## 👍 Acknowledgement
 * [LLaVA](https://github.com/haotian-liu/LLaVA) The codebase we built upon and it is an efficient large language and vision assistant.
