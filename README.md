@@ -86,22 +86,59 @@ With translation API, our model can also support Chinese conversations. We will 
 ### Image understanding
 Following LLaVA, we report the relative scores to GPT-4 for instruction-following questions.
 
-<div align=center>
-<img src="figures/fig3.png" width="500px">
+<div align="center">
+<table border="1" width="100%">
+    <tr align="center">
+        <th>Methods</th><th>LLM</th><th>Conversation</th><th>Detail Description</th><th>Complex Reasoning</th><th>All</th>
+    </tr>
+    <tr align="center">
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-7b-v1.5">Vicuna-7B</a></td><td><b>84.1</b></td><td>74.2</td><td>93.7</td><td>84.2</td>
+    </tr>
+    </tr>
+    <tr align="center">
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi-13B">Chat-UniVi-13B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-13b-v1.5">Vicuna-13B</a></td><td><b>84.1</b></td><td><b>79.4</b></td><td><b>94.7</b></td><td><b>86.1</b></td>
+    </tr>
+</table>
 </div>
+
 
 ### Video understanding
 Following Video-ChatGPT, we report the relative scores between the output of the model and the ground truth, with the assistance of GPT. It is worth noting that the results reported in Video-ChatGPT span a range from 0 to 5. To standardize the metrics, we normalize all scores to a scale of 0 to 100.
 
-<div align=center>
-<img src="figures/fig4.png" width="500px">
+<div align="center">
+<table border="1" width="100%">
+    <tr align="center">
+        <th>Methods</th><th>LLM</th><th>Correct</th><th>Detail</th><th>Context</th><th>Temporal</th><th>Consistency</th>
+    </tr>
+    <tr align="center">
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-7b-v1.5">Vicuna-7B</a></td><td>57.8</td><td>58.2</td><td>69.2</td><td>57.8</td><td>56.2</td>
+    </tr>
+    </tr>
+    <tr align="center">
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi-13B">Chat-UniVi-13B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-13b-v1.5">Vicuna-13B</a></td><td><b>59.4</b></td><td><b>59.8</b></td><td><b>70.5</b></td><td><b>58.0</b></td><td><b>60.6</b></td>
+    </tr>
+</table>
 </div>
 
 ### ScienceQA
 We report both zero-shot and fine-tuning results on the ScienceQA test set. 
 
-<div align=center>
-<img src="figures/fig5.png" width="500px">
+<div align="center">
+<table border="1" width="100%">
+    <tr align="center">
+        <th>Methods</th><th>LLM</th><th>Average</th><th>Subject</th><th></th><th></th><th>Context Modality</th><th></th><th></th><th>Grade</th><th></th>
+    </tr>
+    <tr align="center">
+        <th></th><th></th><th></th><th>NAT</th><th>SOC</th><th>LAN</th><th>TXT</th><th>IMG</th><th>NO</th><th>G1-6</th><th>G7-12</th>
+    </tr>
+    <tr align="center">
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-7b-v1.5">Vicuna-7B</a></td><td>88.78</td><td>88.50</td><td>93.03</td><td>85.91</td><td>88.51</td><td>85.97</td><td>88.15</td><td>88.88</td><td>88.60</td>
+    </tr>
+    </tr>
+    <tr align="center">
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi-13B">Chat-UniVi-13B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-13b-v1.5">Vicuna-13B</a></td><td><b>90.99</b></td><td><b>90.41</b></td><td><b>95.05</b></td><td><b>88.91</b></td><td><b>89.64</b></td><td><b>88.05</b></td><td><b>90.94</b></td><td><b>91.19</b></td><td><b>90.64</b></td>
+    </tr>
+</table>
 </div>
 
 ### VideoQA
