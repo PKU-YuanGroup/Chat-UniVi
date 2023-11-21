@@ -1,7 +1,7 @@
 ## Chat-UniVi-13B
 We releas [Chat-UniVi-13B](https://huggingface.co/Chat-UniVi/Chat-UniVi-13B/tree/main).
 Our proposed unified visual representation framework greatly reduces the number of visual tokens,
-so you can train **13B unified image and video understanding models** in full parameters directly on **8 A100 GPUs**.
+so you can train **13B unified image and video understanding models** in full parameters directly on **8 A100 GPUs** within **3 days**.
 
 
 ## Main Results
