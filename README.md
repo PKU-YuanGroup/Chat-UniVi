@@ -142,7 +142,7 @@ pip install ninja
 pip install flash-attn --no-build-isolation
 ```
 ## 🤖 API
-**We open source all modalities preprocessing code.** If you want to load the model from the model hub on Huggingface or on local, you can use the following code snippets.
+**We open source all modalities preprocessing code.** If you want to load the model from the model hub on Hugging Face or on local, you can use the following code snippets.
 
 ### Inference for Video Understanding
 ```python
