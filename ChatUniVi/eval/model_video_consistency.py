@@ -77,12 +77,14 @@ def _get_rawvideo_dec(video_path, image_processor, max_frames=MAX_IMAGE_LENGTH, 
             pass
         else:
             video[:slice_len, ...] = patch_images
+
+        return patch_images, video_mask
     else:
         print("video path: {} error.".format(video_path))
 
     video_mask[:max_video_length] = [1] * max_video_length
 
-    return video, video_mask
+    return torch.from_numpy(video), video_mask
 
 
 def eval_model(args):
@@ -157,7 +159,7 @@ def eval_model(args):
         with torch.inference_mode():
             output_ids = model.generate(
                 input_ids,
-                images=torch.from_numpy(video_frames).half().cuda(),
+                images=video_frames.half().cuda(),
                 do_sample=True,
                 temperature=args.temperature,
                 top_p=args.top_p,
