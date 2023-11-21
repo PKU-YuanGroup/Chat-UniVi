@@ -110,7 +110,7 @@ We follow the evaluation protocol in Video-ChatGPT, i.e., employing GPT-assisted
 <img src="figures/fig6.png" width="500px">
 </div>
 
-### Hallucination Evaluation
+### Hallucination Evaluation (POPE)
 Our model also achieves impressive results in the object hallucination benchmark.
 
 <div align=center>

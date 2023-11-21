@@ -17,10 +17,19 @@ Download the pre-trained model.
 |          Name           |                                              Weight                                              |
 |:-----------------------:|:------------------------------------------------------------------------------------------------:|
 |      Chat-UniVi-7B      | [Download](https://huggingface.co/Chat-UniVi/Chat-UniVi/tree/main) |
+|      Chat-UniVi-13B      | [Download](https://huggingface.co/Chat-UniVi/Chat-UniVi-13B/tree/main) |
 | Chat-UniVi-ScienceQA-7B | [Download](https://huggingface.co/Chat-UniVi/Chat-UniVi-ScienceQA/tree/main) |
 
 
 ## 3. Train the model
+## 2. Pre-trained model
+
+Prepare the base model.
+
+|          Base model           |                                              Weight                                              |
+|:-----------------------:|:------------------------------------------------------------------------------------------------:|
+|      Vicuna-7B      | [Download](https://huggingface.co/lmsys/vicuna-7b-v1.5) |
+|      Vicuna-13B      | [Download](https://huggingface.co/lmsys/vicuna-13b-v1.5) |
 
 ### Stage1: Multimodal Pre-training
 ```
