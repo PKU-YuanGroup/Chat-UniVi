@@ -51,10 +51,11 @@ Extensive experimental results demonstrate that Chat-UniVi, as a unified model, 
 Please change the model path on line 15 of the main_demo.py first. Then run the demo:
 
 ```
-# Line 15 of main_demo.py
-model_path = [model path]
+# For Chat-UniVi-7B
+CUDA_VISIBLE_DEVICES=0 uvicorn main_demo_7B:app --host 0.0.0.0 --port 8888
 
-CUDA_VISIBLE_DEVICES=0 uvicorn main_demo:app --host 0.0.0.0 --port 8888
+# For Chat-UniVi-13B
+CUDA_VISIBLE_DEVICES=0 uvicorn main_demo_13B:app --host 0.0.0.0 --port 8888
 ```
 
 ### A conversation with both image and video
@@ -260,7 +261,7 @@ def _get_rawvideo_dec(video_path, image_processor, max_frames=MAX_IMAGE_LENGTH, 
 
 if __name__ == '__main__':
     # Model Parameter
-    model_path = ${model_path}
+    model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"
     video_path = ${video_path}
     max_frames = ${max_frames}
 
@@ -358,7 +359,7 @@ from PIL import Image
 
 if __name__ == '__main__':
     # Model Parameter
-    model_path = ${model_path}
+    model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"
     image_path = ${image_path}
 
     # Input Text
