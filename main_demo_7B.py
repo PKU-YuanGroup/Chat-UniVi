@@ -9,6 +9,7 @@ from PIL import Image
 import tempfile
 import imageio
 from decord import VideoReader, cpu
+import shutil
 
 
 app = FastAPI()
@@ -24,29 +25,7 @@ def save_image_to_local(image):
 
 def save_video_to_local(video_path):
     filename = os.path.join('temp', next(tempfile._get_candidate_names()) + '.mp4')
-
-    if os.path.exists(video_path):
-        vreader = VideoReader(video_path, ctx=cpu(0))
-    else:
-        print(video_path)
-        raise FileNotFoundError
-
-    fps = vreader.get_avg_fps()
-    f_start = 0
-    f_end = int(min(1000000000, len(vreader) - 1))
-    num_frames = f_end - f_start + 1
-    if num_frames > 0:
-        # T x 3 x H x W
-        sample_fps = 1
-        t_stride = int(round(float(fps) / sample_fps))
-        all_pos = list(range(f_start, f_end + 1, t_stride))
-        sample_pos = all_pos
-        patch_images = [f for f in vreader.get_batch(sample_pos).asnumpy()]
-
-    writer = imageio.get_writer(filename, format='FFMPEG', fps=8)
-    for frame in patch_images:
-        writer.append_data(frame)
-    writer.close()
+    shutil.copyfile(video_path, filename)
     return filename
 
 
