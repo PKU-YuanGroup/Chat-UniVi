@@ -12,7 +12,7 @@ from decord import VideoReader, cpu
 
 
 app = FastAPI()
-model_path = ""  # model_path = [model path]
+model_path = "Chat-UniVi/Chat-UniVi"  # model_path = [model path]
 assert model_path is not ""
 
 def save_image_to_local(image):
