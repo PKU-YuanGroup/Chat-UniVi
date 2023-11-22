@@ -1,5 +1,5 @@
 <div align=center>
-<img src="figures/fig10.png" width="300px">
+<img src="figures/fig10.png" width="280px">
 </div>
 
 <h2 align="center"> <a href="https://arxiv.org/abs/2311.08046">Chat-UniVi: Unified Visual Representation Empowers Large Language Models with Image and Video Understanding</a></h2>
