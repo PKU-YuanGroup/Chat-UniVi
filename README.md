@@ -16,6 +16,7 @@
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/PKU-YuanGroup/Chat-UniVi?color=success&label=Issues)](https://github.com/PKU-YuanGroup/Chat-UniVi/issues?q=is%3Aissue+is%3Aclosed)
 </h5>
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/image-based-generative-performance)](https://paperswithcode.com/sota/image-based-generative-performance?p=chat-univi-unified-visual-representation) <br>
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance)](https://paperswithcode.com/sota/video-based-generative-performance?p=chat-univi-unified-visual-representation) <br>
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-1)](https://paperswithcode.com/sota/video-based-generative-performance-1?p=chat-univi-unified-visual-representation) <br>
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-5)](https://paperswithcode.com/sota/video-based-generative-performance-5?p=chat-univi-unified-visual-representation) <br>
