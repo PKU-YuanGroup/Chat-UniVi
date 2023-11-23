@@ -185,7 +185,7 @@ Our model also achieves impressive results in the object hallucination benchmark
 
 ## 🛠️ Requirements and Installation
 * Python >= 3.10
-* Install required packages:
+* Install required packages (If you only intend to perform inference, there's no need to install ```deepspeed``` and ```flash-attn```.):
 ```bash
 git clone https://github.com/PKU-YuanGroup/Chat-UniVi
 cd Chat-UniVi
@@ -193,9 +193,10 @@ conda create -n chatunivi python=3.10 -y
 conda activate chatunivi
 pip install --upgrade pip
 pip install -e .
-pip install ninja
-pip install flash-attn --no-build-isolation
+# pip install ninja
+# pip install flash-attn --no-build-isolation
 ```
+
 ## 🤖 API
 **We open source all modalities preprocessing code.** If you want to load the model from the model hub on Hugging Face or on local, you can use the following code snippets.
 
