@@ -16,6 +16,17 @@
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/PKU-YuanGroup/Chat-UniVi?color=success&label=Issues)](https://github.com/PKU-YuanGroup/Chat-UniVi/issues?q=is%3Aissue+is%3Aclosed)
 </h5>
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance)](https://paperswithcode.com/sota/video-based-generative-performance?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-1)](https://paperswithcode.com/sota/video-based-generative-performance-1?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-5)](https://paperswithcode.com/sota/video-based-generative-performance-5?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-4)](https://paperswithcode.com/sota/video-based-generative-performance-4?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-3)](https://paperswithcode.com/sota/video-based-generative-performance-3?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-2)](https://paperswithcode.com/sota/video-based-generative-performance-2?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/zeroshot-video-question-answer-on-activitynet)](https://paperswithcode.com/sota/zeroshot-video-question-answer-on-activitynet?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/zeroshot-video-question-answer-on-msrvtt-qa)](https://paperswithcode.com/sota/zeroshot-video-question-answer-on-msrvtt-qa?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/zeroshot-video-question-answer-on-msvd-qa)](https://paperswithcode.com/sota/zeroshot-video-question-answer-on-msvd-qa?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/science-question-answering-on-scienceqa)](https://paperswithcode.com/sota/science-question-answering-on-scienceqa?p=chat-univi-unified-visual-representation) <br>
+
 ## 📣 News
 * **[2023/11/22]**  ⚡ The **online demo** is available at [Hugging Face Demo](https://huggingface.co/spaces/Chat-UniVi/Chat-UniVi). Welcome to try!
 * **[2023/11/22]**  The processed data is available at [DATA.md](DATA.md).
