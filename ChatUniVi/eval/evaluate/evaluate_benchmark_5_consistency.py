@@ -140,7 +140,6 @@ def main():
 
     # Set the OpenAI API key.
     openai.api_key = args.api_key
-
     num_tasks = args.num_tasks
 
     # While loop to ensure that all captions are processed.
