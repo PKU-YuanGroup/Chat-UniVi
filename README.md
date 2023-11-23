@@ -16,9 +16,23 @@
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/PKU-YuanGroup/Chat-UniVi?color=success&label=Issues)](https://github.com/PKU-YuanGroup/Chat-UniVi/issues?q=is%3Aissue+is%3Aclosed)
 </h5>
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/image-based-generative-performance)](https://paperswithcode.com/sota/image-based-generative-performance?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance)](https://paperswithcode.com/sota/video-based-generative-performance?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-1)](https://paperswithcode.com/sota/video-based-generative-performance-1?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-5)](https://paperswithcode.com/sota/video-based-generative-performance-5?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-4)](https://paperswithcode.com/sota/video-based-generative-performance-4?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-3)](https://paperswithcode.com/sota/video-based-generative-performance-3?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/video-based-generative-performance-2)](https://paperswithcode.com/sota/video-based-generative-performance-2?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/zeroshot-video-question-answer-on-activitynet)](https://paperswithcode.com/sota/zeroshot-video-question-answer-on-activitynet?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/zeroshot-video-question-answer-on-msrvtt-qa)](https://paperswithcode.com/sota/zeroshot-video-question-answer-on-msrvtt-qa?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/zeroshot-video-question-answer-on-tgif-qa)](https://paperswithcode.com/sota/zeroshot-video-question-answer-on-tgif-qa?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/zeroshot-video-question-answer-on-msvd-qa)](https://paperswithcode.com/sota/zeroshot-video-question-answer-on-msvd-qa?p=chat-univi-unified-visual-representation) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/science-question-answering-on-scienceqa)](https://paperswithcode.com/sota/science-question-answering-on-scienceqa?p=chat-univi-unified-visual-representation) <br>
+
 ## 📣 News
+* **[2023/11/22]**  ⚡ The **online demo** is available at [Hugging Face Demo](https://huggingface.co/spaces/Chat-UniVi/Chat-UniVi). Welcome to try!
 * **[2023/11/22]**  The processed data is available at [DATA.md](DATA.md).
-* **[2023/11/21]**  💡We release [Chat-UniVi-13B](https://huggingface.co/Chat-UniVi/Chat-UniVi-13B/tree/main). Our proposed unified visual representation framework greatly reduces the number of visual tokens, so you can train **13B unified image and video understanding models** in full parameters directly on **8 A100 GPUs** within **3 days**. Chat-UniVi-13B has better performance ([Results](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/results/Chat-UniVi-13B.md)). The training code for Chat-UniVi-13B has been updated ([TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md)).
+* **[2023/11/21]**  💡 We release [Chat-UniVi-13B](https://huggingface.co/Chat-UniVi/Chat-UniVi-13B/tree/main). Our proposed unified visual representation framework greatly reduces the number of visual tokens, so you can train **13B unified image and video understanding models** in full parameters directly on **8 A100 GPUs** within **3 days**. Chat-UniVi-13B has better performance ([Results](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/results/Chat-UniVi-13B.md)). The training code for Chat-UniVi-13B has been updated ([TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md)).
 * **[2023/11/21]**  We provide inference code for [video understanding](https://github.com/PKU-YuanGroup/Chat-UniVi/tree/main#inference-for-video-understanding) and [image understanding](https://github.com/PKU-YuanGroup/Chat-UniVi/tree/main#inference-for-image-understanding).
 * **[2023/11/21]**  We enhance the video loading code by [introducing support for variable-length videos](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/d216cb52bff5ebf6e41eaa56d07a85568e294651/ChatUniVi/eval/model_video_general.py#L29). This improvement involves eliminating the previous zero-filling operation on the video. We find that this updated video loading method significantly boosts performance. Stay tuned for the latest performance updates.
 * **[2023/11/15]**  Code are available now! Welcome to **watch** 👀 this repository for the latest updates.
@@ -170,6 +184,8 @@ Our model also achieves impressive results in the object hallucination benchmark
 </div>
 
 ## 🛠️ Requirements and Installation
+Attention! If you are using a Windows system, please make sure to comment out ```deepspeed``` in pyproject.toml (#Line 20), as installing ```deepspeed``` may result in errors on Windows (see [Link](https://github.com/PKU-YuanGroup/Chat-UniVi/issues/2#issue-2007607645)). Keep in mind that ```deepspeed``` is intended for training models only. If you are solely engaged in inference and not training models, it is recommended to comment it out.
+
 * Python >= 3.10
 * Install required packages:
 ```bash
@@ -179,9 +195,10 @@ conda create -n chatunivi python=3.10 -y
 conda activate chatunivi
 pip install --upgrade pip
 pip install -e .
-pip install ninja
-pip install flash-attn --no-build-isolation
+# pip install ninja  # If you only intend to perform inference, there's no need to install ```ninja```.
+# pip install flash-attn --no-build-isolation  # If you only intend to perform inference, there's no need to install ```flash-attn```.
 ```
+
 ## 🤖 API
 **We open source all modalities preprocessing code.** If you want to load the model from the model hub on Hugging Face or on local, you can use the following code snippets.
 

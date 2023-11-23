@@ -134,8 +134,8 @@ All the conversation data is in JSON format, and each conversation has the follo
 Modify the data path in [config/dataset_config.py](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/ChatUniVi/config/dataset_config.py):
 ```python
 New_data = {
-    "chat_path": "${PATH}/CC3M-595K/chat.json",
-    "new_data": "${PATH}/CC3M-595K",
+    "chat_path": "${PATH}/chat.json",
+    "new_data": "${PATH}/file",
 }
 ```
 

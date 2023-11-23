@@ -14,7 +14,6 @@ import shutil
 
 app = FastAPI()
 model_path = "Chat-UniVi/Chat-UniVi"  # model_path = [model path]
-assert model_path is not ""
 
 def save_image_to_local(image):
     filename = os.path.join('temp', next(tempfile._get_candidate_names()) + '.jpg')
