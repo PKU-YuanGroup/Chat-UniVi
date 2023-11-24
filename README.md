@@ -461,6 +461,8 @@ if __name__ == '__main__':
 * [LLaVA](https://github.com/haotian-liu/LLaVA) The codebase we built upon and it is an efficient large language and vision assistant.
 * [Video-ChatGPT](https://github.com/mbzuai-oryx/Video-ChatGPT) Great job contributing the evaluation code and dataset.
 
+## 🤝 Related Projects
+* [Video-LLaVA](https://github.com/PKU-YuanGroup/Video-LLaVA) This framework exhibits remarkable interactive capabilities between images and videos.
 
 ## 🔒 License
 * The majority of this project is released under the Apache 2.0 license as found in the [LICENSE](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/LICENSE) file.
@@ -476,3 +478,8 @@ If you find this paper useful, please consider staring 🌟 this repo and citing
   year={2023}
 }
 ```
+
+## ✨ Contributors
+<a href="https://github.com/PKU-YuanGroup/Chat-UniVi/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=PKU-YuanGroup/Chat-UniVi" />
+</a>
