@@ -1,5 +1,5 @@
 from .dataset_config import *
-from .mode_config import *
+from .model_config import *
 
 
 ModelConfig = {
