@@ -78,7 +78,7 @@ def _get_rawvideo_dec(video_path, image_processor, max_frames=MAX_IMAGE_LENGTH, 
         else:
             video[:slice_len, ...] = patch_images
 
-        return patch_images, video_mask
+        return patch_images, slice_len
     else:
         print("video path: {} error.".format(video_path))
 
@@ -136,14 +136,14 @@ def eval_model(args):
 
         # Check if the video exists
         if video_path is not None:  # Modified this line
-            video_frames, _ = _get_rawvideo_dec(video_path, image_processor, max_frames=MAX_IMAGE_LENGTH)
+            video_frames, slice_len = _get_rawvideo_dec(video_path, image_processor, max_frames=MAX_IMAGE_LENGTH)
 
         try:
             cur_prompt = qs
             if model.config.mm_use_im_start_end:
-                qs = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN * MAX_IMAGE_LENGTH + DEFAULT_IM_END_TOKEN + '\n' + qs
+                qs = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN * slice_len + DEFAULT_IM_END_TOKEN + '\n' + qs
             else:
-                qs = DEFAULT_IMAGE_TOKEN * MAX_IMAGE_LENGTH + '\n' + qs
+                qs = DEFAULT_IMAGE_TOKEN * slice_len + '\n' + qs
 
             conv = conv_templates[args.conv_mode].copy()
             conv.append_message(conv.roles[0], qs)
