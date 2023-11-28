@@ -264,7 +264,7 @@ def _get_rawvideo_dec(video_path, image_processor, max_frames=MAX_IMAGE_LENGTH, 
 
 if __name__ == '__main__':
     # Model Parameter
-    # model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"
+    model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"
     video_path = ${video_path}
 
     # The number of visual tokens varies with the length of the video. "max_frames" is the maximum number of visual tokens.
@@ -308,6 +308,7 @@ if __name__ == '__main__':
     # Check if the video exists
     if video_path is not None:
         video_frames, slice_len = _get_rawvideo_dec(video_path, image_processor, max_frames=max_frames, video_framerate=video_framerate)
+
         cur_prompt = qs
         if model.config.mm_use_im_start_end:
             qs = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN * slice_len + DEFAULT_IM_END_TOKEN + '\n' + qs
