@@ -267,8 +267,8 @@ if __name__ == '__main__':
     model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"
     video_path = ${video_path}
 
-    # The number of visual tokens varies with the length of the video. "max_frames" is the maximum number of visual tokens.
-    # When the video is long, we will uniformly downsample the video to meet the visual token when equal to the "max_frames".
+    # The number of visual tokens varies with the length of the video. "max_frames" is the maximum number of frames.
+    # When the video is long, we will uniformly downsample the video to meet the frames when equal to the "max_frames".
     max_frames = 100
 
     # The number of frames retained per second in the video.
