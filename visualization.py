@@ -71,7 +71,7 @@ def merge(image, token_dict, patch_size=14, alpha=0.2, line_color=np.array([200,
 
 if __name__ == '__main__':
     image_path = "figures/COCO_val2014_000000214293.jpg"
-    clip_vit_14_path = "E:/米哈游文件夹/iclr/openclip"
+    clip_vit_14_path = ${openai_clip_path}
     output_file = "figures"
 
     if not os.path.exists(output_file):
