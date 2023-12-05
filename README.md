@@ -7,7 +7,7 @@
 
 <h5 align=center>
 
-[![Demo](https://img.shields.io/badge/⚡-Hugging%20Face%20Demo-yellow.svg)](https://huggingface.co/spaces/Chat-UniVi/Chat-UniVi)
+<!-- [![Demo](https://img.shields.io/badge/⚡-Hugging%20Face%20Demo-yellow.svg)](https://huggingface.co/spaces/Chat-UniVi/Chat-UniVi) -->
 [![hf](https://img.shields.io/badge/🤗-Hugging%20Face-blue.svg)](https://huggingface.co/Chat-UniVi)
 [![arXiv](https://img.shields.io/badge/Arxiv-2311.08046-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2311.08046)
 [![License](https://img.shields.io/badge/Code%20License-Apache2.0-yellow)](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/LICENSE)
@@ -30,7 +30,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/science-question-answering-on-scienceqa)](https://paperswithcode.com/sota/science-question-answering-on-scienceqa?p=chat-univi-unified-visual-representation) <br>
 
 ## 📣 News
-* **[2023/11/22]**  ⚡ The **online demo** is available at [Hugging Face Demo](https://huggingface.co/spaces/Chat-UniVi/Chat-UniVi). Welcome to try!
+<!-- * **[2023/11/22]**  ⚡ The **online demo** is available at [Hugging Face Demo](https://huggingface.co/spaces/Chat-UniVi/Chat-UniVi). Welcome to try!  -->
 * **[2023/11/22]**  The processed data is available at [DATA.md](DATA.md).
 * **[2023/11/21]**  💡 We release [Chat-UniVi-13B](https://huggingface.co/Chat-UniVi/Chat-UniVi-13B/tree/main). Our proposed unified visual representation framework greatly reduces the number of visual tokens, so you can train **13B unified image and video understanding models** in full parameters directly on **8 A100 GPUs** within **3 days**. Chat-UniVi-13B has better performance ([Results](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/results/Chat-UniVi-13B.md)). The training code for Chat-UniVi-13B has been updated ([TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md)).
 * **[2023/11/21]**  We provide inference code for [video understanding](https://github.com/PKU-YuanGroup/Chat-UniVi/tree/main#inference-for-video-understanding) and [image understanding](https://github.com/PKU-YuanGroup/Chat-UniVi/tree/main#inference-for-image-understanding).
@@ -218,11 +218,6 @@ import numpy as np
 
 def _get_rawvideo_dec(video_path, image_processor, max_frames=MAX_IMAGE_LENGTH, image_resolution=224, video_framerate=1, s=None, e=None):
     # speed up video decode via decord.
-    video_mask = np.zeros(max_frames, dtype=np.int64)
-    max_video_length = 0
-
-    # T x 3 x H x W
-    video = np.zeros((max_frames, 3, image_resolution, image_resolution), dtype=np.float64)
 
     if s is None:
         start_time, end_time = None, None
@@ -262,25 +257,22 @@ def _get_rawvideo_dec(video_path, image_processor, max_frames=MAX_IMAGE_LENGTH, 
         patch_images = torch.stack([image_processor.preprocess(img, return_tensors='pt')['pixel_values'][0] for img in patch_images])
         slice_len = patch_images.shape[0]
 
-        max_video_length = max_video_length if max_video_length > slice_len else slice_len
-        if slice_len < 1:
-            pass
-        else:
-            video[:slice_len, ...] = patch_images
-
-        return patch_images, video_mask
+        return patch_images, slice_len
     else:
         print("video path: {} error.".format(video_path))
 
-    video_mask[:max_video_length] = [1] * max_video_length
-
-    return torch.from_numpy(video), video_mask
 
 if __name__ == '__main__':
     # Model Parameter
     model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"
     video_path = ${video_path}
-    max_frames = ${max_frames}
+
+    # The number of visual tokens varies with the length of the video. "max_frames" is the maximum number of frames.
+    # When the video is long, we will uniformly downsample the video to meet the frames when equal to the "max_frames".
+    max_frames = 100
+
+    # The number of frames retained per second in the video.
+    video_framerate = 1
 
     # Input Text
     qs = "Describe the video."
@@ -315,13 +307,13 @@ if __name__ == '__main__':
 
     # Check if the video exists
     if video_path is not None:
-        video_frames, _ = _get_rawvideo_dec(video_path, image_processor, max_frames=max_frames)
+        video_frames, slice_len = _get_rawvideo_dec(video_path, image_processor, max_frames=max_frames, video_framerate=video_framerate)
 
         cur_prompt = qs
         if model.config.mm_use_im_start_end:
-            qs = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN * MAX_IMAGE_LENGTH + DEFAULT_IM_END_TOKEN + '\n' + qs
+            qs = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN * slice_len + DEFAULT_IM_END_TOKEN + '\n' + qs
         else:
-            qs = DEFAULT_IMAGE_TOKEN * MAX_IMAGE_LENGTH + '\n' + qs
+            qs = DEFAULT_IMAGE_TOKEN * slice_len + '\n' + qs
 
         conv = conv_templates[conv_mode].copy()
         conv.append_message(conv.roles[0], qs)
