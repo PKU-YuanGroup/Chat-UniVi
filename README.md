@@ -31,6 +31,7 @@
 
 ## 📣 News
 <!-- * **[2023/11/22]**  ⚡ The **online demo** is available at [Hugging Face Demo](https://huggingface.co/spaces/Chat-UniVi/Chat-UniVi). Welcome to try!  -->
+* **[2023/12/05]**  The visualization script is available at [VISUALIZATION.md](VISUALIZATION.md).
 * **[2023/11/22]**  The processed data is available at [DATA.md](DATA.md).
 * **[2023/11/21]**  💡 We release [Chat-UniVi-13B](https://huggingface.co/Chat-UniVi/Chat-UniVi-13B/tree/main). Our proposed unified visual representation framework greatly reduces the number of visual tokens, so you can train **13B unified image and video understanding models** in full parameters directly on **8 A100 GPUs** within **3 days**. Chat-UniVi-13B has better performance ([Results](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/results/Chat-UniVi-13B.md)). The training code for Chat-UniVi-13B has been updated ([TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md)).
 * **[2023/11/21]**  We provide inference code for [video understanding](https://github.com/PKU-YuanGroup/Chat-UniVi/tree/main#inference-for-video-understanding) and [image understanding](https://github.com/PKU-YuanGroup/Chat-UniVi/tree/main#inference-for-image-understanding).
