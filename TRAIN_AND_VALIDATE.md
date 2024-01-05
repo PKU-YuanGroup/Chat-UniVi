@@ -22,7 +22,6 @@ Download the pre-trained model.
 
 
 ## 3. Train the model
-## 2. Pre-trained model
 
 Prepare the base model.
 

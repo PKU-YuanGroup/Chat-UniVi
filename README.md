@@ -30,11 +30,12 @@
 
 ## 📣 News
 <!-- * **[2023/11/22]**  ⚡ The **online demo** is available at [Hugging Face Demo](https://huggingface.co/spaces/Chat-UniVi/Chat-UniVi). Welcome to try!  -->
+* **[2024/01/05]**  We enhance the video loading code by [introducing support for variable-length videos](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/d216cb52bff5ebf6e41eaa56d07a85568e294651/ChatUniVi/eval/model_video_general.py#L29). This improvement involves eliminating the previous zero-filling operation on the video. We find that this updated video loading method significantly boosts performance ([Results]()).
 * **[2023/12/05]**  The visualization script is available at [VISUALIZATION.md](VISUALIZATION.md).
 * **[2023/11/22]**  The processed data is available at [DATA.md](DATA.md).
 * **[2023/11/21]**  💡 We release [Chat-UniVi-13B](https://huggingface.co/Chat-UniVi/Chat-UniVi-13B/tree/main). Our proposed unified visual representation framework greatly reduces the number of visual tokens, so you can train **13B unified image and video understanding models** in full parameters directly on **8 A100 GPUs** within **3 days**. Chat-UniVi-13B has better performance ([Results](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/main/results/Chat-UniVi-13B.md)). The training code for Chat-UniVi-13B has been updated ([TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md)).
 * **[2023/11/21]**  We provide inference code for [video understanding](https://github.com/PKU-YuanGroup/Chat-UniVi/tree/main#inference-for-video-understanding) and [image understanding](https://github.com/PKU-YuanGroup/Chat-UniVi/tree/main#inference-for-image-understanding).
-* **[2023/11/21]**  We enhance the video loading code by [introducing support for variable-length videos](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/d216cb52bff5ebf6e41eaa56d07a85568e294651/ChatUniVi/eval/model_video_general.py#L29). This improvement involves eliminating the previous zero-filling operation on the video. We find that this updated video loading method significantly boosts performance. Stay tuned for the latest performance updates.
+* **[2023/11/21]**  We enhance the video loading code by [introducing support for variable-length videos](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/d216cb52bff5ebf6e41eaa56d07a85568e294651/ChatUniVi/eval/model_video_general.py#L29). This improvement involves eliminating the previous zero-filling operation on the video. We find that this updated video loading method significantly boosts performance.
 * **[2023/11/15]**  Code are available now! Welcome to **watch** 👀 this repository for the latest updates.
 
 ## 😮 Highlights
@@ -161,15 +162,65 @@ We report both zero-shot and fine-tuning results on the ScienceQA test set.
 ### VideoQA
 We follow the evaluation protocol in Video-ChatGPT, i.e., employing GPT-assisted evaluation to assess the capabilities of models.
 
-<div align=center>
-<img src="figures/fig6.png" width="500px">
+<div align="center">
+<table border="1" width="100%">
+    <tr align="center">
+        <th>Methods</th><th>LLM Size</th><th>MSRVTT-QA</th><th></th><th>MSVD-QA</th><th></th><th>TGIF-QA</th><th></th><th>ActivityNet-QA</th><th></th>
+    </tr>
+    <tr align="center">
+        <th></th><th></th><th>Accuracy</th><th>Score</th><th>Accuracy</th><th>Score</th><th>Accuracy</th><th>Score</th><th>Accuracy</th><th>Score</th>
+    </tr>
+    <tr align="center">
+        <td>Video-LLaMA</td><td>7B</td><td>29.6</td><td>1.8</td><td>51.6</td><td>2.5</td><td>-</td><td>-</td><td>12.4</td><td>1.1</td>
+    </tr>
+    <tr align="center">
+        <td>LLaMA-Adapter</td><td>7B</td><td>43.8</td><td>2.7</td><td>54.9</td><td>3.1</td><td>-</td><td>-</td><td>34.2</td><td>2.7</td>
+    </tr>
+    <tr align="center">
+        <td>VideoChat</td><td>7B</td><td>45.0</td><td>2.5</td><td>56.3</td><td>2.8</td><td>34.4</td><td>2.3</td><td>26.5</td><td>2.2</td>
+    </tr>
+    <tr align="center">
+        <td>Video-ChatGPT</td><td>7B</td><td>49.3</td><td>2.8</td><td>64.9</td><td>3.3</td><td>51.4</td><td>3.0</td><td>35.2</td><td>2.7</td>
+    </tr>
+    <tr align="center">
+        <td>Video-LLaVA</td><td>7B</td><td>59.2</td><td>3.5</td><td>70.7</td><td>3.9</td><td>70.0</td><td>4.0</td><td>45.3</td><td>3.3</td>
+    </tr>
+    <tr align="center">
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a></td><td>7B</td><td>54.6</td><td>3.1</td><td>65.0</td><td>3.6</td><td>60.3</td><td>3.4</td><td>45.8</td><td>3.2</td>
+    </tr>
+    <tr align="center">
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a> with new video loading code</td><td>7B</td><td>55.0</td><td>3.1</td><td>69.3</td><td>3.7</td><td>69.0</td><td>3.8</td><td>coming</td><td>coming</td>
+    </tr>
+    <tr align="center">
+        <td><a href="">Chat-UniVi-7B v1.5</a></td><td>7B</td><td>coming</td><td>coming</td><td>68.8</td><td>3.7</td><td>70.0</td><td>3.8</td><td>47.2</td><td>3.3</td>
+    </tr>
+</table>
 </div>
 
 ### Hallucination Evaluation (POPE)
 Our model also achieves impressive results in the object hallucination benchmark.
 
-<div align=center>
-<img src="figures/fig7.png" width="500px">
+<div align="center">
+<table border="1" width="100%">
+    <tr align="center">
+        <th>Methods</th><th>LLM Size</th><th>Random</th><th></th><th></th><th>Popular</th><th></th><th></th><th>Adversarial</th><th></th><th></th>
+    </tr>
+    <tr align="center">
+        <th></th><th></th><th>Accuracy</th><th>F1-Score</th><th>Yes</th><th>Accuracy</th><th>F1-Score</th><th>Yes</th><th>Accuracy</th><th>F1-Score</th><th>Yes</th>
+    </tr>
+    <tr align="center">
+        <td>LLaVA</td><td>7B</td><td>72.16</td><td>78.22</td><td>76.29</td><td>61.37</td><td>71.52</td><td>85.63</td><td>58.67</td><td>70.12</td><td>88.33</td>
+    </tr>
+    <tr align="center">
+        <td>Video-LLaVA</td><td>7B</td><td>86.2</td><td>85.2</td><td>42.0</td><td>85.3</td><td>84.0</td><td>42.1</td><td>81.6</td><td>80.8</td><td>45.8</td>
+    </tr>
+    <tr align="center">
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a></td><td>7B</td><td>85.19</td><td>86.05</td><td>54.67</td><td>69.50</td><td>74.39</td><td>69.10</td><td>64.97</td><td>71.54</td><td>73.10</td>
+    </tr>
+    <tr align="center">
+        <td><a href="">Chat-UniVi-7B v1.5</a></td><td>7B</td><td>87.01</td><td>86.09</td><td>41.86</td><td>85.87</td><td>84.76</td><td>42.73</td><td>83.23</td><td>82.31</td><td>44.77</td>
+    </tr>
+</table>
 </div>
 
 ## 😍 Visualization
