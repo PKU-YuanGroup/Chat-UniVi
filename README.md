@@ -189,10 +189,10 @@ We follow the evaluation protocol in Video-ChatGPT, i.e., employing GPT-assisted
         <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a></td><td>7B</td><td>54.6</td><td>3.1</td><td>65.0</td><td>3.6</td><td>60.3</td><td>3.4</td><td>45.8</td><td>3.2</td>
     </tr>
     <tr align="center">
-        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a> with new video loading code</td><td>7B</td><td>55.0</td><td>3.1</td><td>69.3</td><td>3.7</td><td>69.0</td><td>3.8</td><td>coming</td><td>coming</td>
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a> with new video loading code</td><td>7B</td><td>55.0</td><td>3.1</td><td>69.3</td><td>3.7</td><td>69.0</td><td>3.8</td><td>46.1</td><td>3.3</td>
     </tr>
     <tr align="center">
-        <td><a href="">Chat-UniVi-7B v1.5</a></td><td>7B</td><td>coming</td><td>coming</td><td>68.8</td><td>3.7</td><td>70.0</td><td>3.8</td><td>47.2</td><td>3.3</td>
+        <td><a href="">Chat-UniVi-7B v1.5</a></td><td>7B</td><td>57.5</td><td>3.2</td><td>68.8</td><td>3.7</td><td>70.0</td><td>3.8</td><td>47.2</td><td>3.3</td>
     </tr>
 </table>
 </div>
