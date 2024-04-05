@@ -29,6 +29,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/science-question-answering-on-scienceqa)](https://paperswithcode.com/sota/science-question-answering-on-scienceqa?p=chat-univi-unified-visual-representation) <br>
 
 ## 📣 News
+* **[2024/04/05]** We've revised the temporal evaluation performance of video understanding, resulting in an actual model performance of 47.9 instead of the previously stated 57.8. We sincerely apologize for any inconvenience our oversight may have caused you.
 * **[2024/04/05]** **Chat-UniVi** has been selected as a **Highlight** paper at CVPR 2024! (Top 3% of 11532 submissions).
 * **[2024/02/27]** Our **Chat-UniVi** has been accepted by CVPR 2024!
 * **[2024/01/05]**  We enhance the video loading code by [introducing support for variable-length videos](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/d216cb52bff5ebf6e41eaa56d07a85568e294651/ChatUniVi/eval/model_video_general.py#L29). This improvement involves eliminating the previous zero-filling operation on the video. We find that this updated video loading method significantly boosts performance ([Results](https://github.com/PKU-YuanGroup/Chat-UniVi?tab=readme-ov-file#videoqa)).
@@ -131,11 +132,11 @@ Following Video-ChatGPT, we report the relative scores between the output of the
         <th>Methods</th><th>LLM</th><th>Correct</th><th>Detail</th><th>Context</th><th>Temporal</th><th>Consistency</th>
     </tr>
     <tr align="center">
-        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-7b-v1.5">Vicuna-7B</a></td><td>57.8</td><td>58.2</td><td>69.2</td><td>57.8</td><td>56.2</td>
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi">Chat-UniVi-7B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-7b-v1.5">Vicuna-7B</a></td><td>57.8</td><td>58.2</td><td>69.2</td><td>47.9</td><td>56.2</td>
     </tr>
     </tr>
     <tr align="center">
-        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi-13B">Chat-UniVi-13B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-13b-v1.5">Vicuna-13B</a></td><td><b>59.4</b></td><td><b>59.8</b></td><td><b>70.5</b></td><td><b>58.0</b></td><td><b>60.6</b></td>
+        <td><a href="https://huggingface.co/Chat-UniVi/Chat-UniVi-13B">Chat-UniVi-13B</a></td><td><a href="https://huggingface.co/lmsys/vicuna-13b-v1.5">Vicuna-13B</a></td><td><b>59.4</b></td><td><b>59.8</b></td><td><b>70.5</b></td><td><b>-</b></td><td><b>60.6</b></td>
     </tr>
 </table>
 </div>
