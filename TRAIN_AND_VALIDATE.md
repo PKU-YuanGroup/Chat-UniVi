@@ -152,21 +152,28 @@ It is worth noting that the results span a range from 0 to 5.
 To standardize the metrics, we normalized all scores to a scale of 0 to 100 in the paper.
 
 #### Step 1: Load the model to generate results
-```
+```CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python ChatUniVi/eval/model_video_general.py \
+--model-path ${model path} \
+--question-file ChatUniVi/eval/questions/video_qa/generic_qa.json \
+--video-folder ${video folder} \
+--answers-file results/answer-video-generic.jsonl
+
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python ChatUniVi/eval/model_video_general.py \
+--model-path ${model path} \
+--question-file ChatUniVi/eval/questions/video_qa/temporal_qa.json \
+--video-folder ${video folder} \
+--answers-file results/answer-video-temporal.jsonl
+
+
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 python ChatUniVi/eval/model_video_consistency.py \
 --model-path ${model path} \
 --question-file ChatUniVi/eval/questions/video_qa/consistency_qa.json \
 --video-folder ${video folder} \
 --answers-file results/answer-video-consistency.jsonl
-
-
-CUDA_VISIBLE_DEVICES=0,1,2,3 \
-python ChatUniVi/eval/model_video_general.py \
---model-path ${model path} \
---question-file ChatUniVi/eval/questions/video_qa/generic_qa.json \
---video-folder ${video folder} \
---answers-file results/answer-video-generic.jsonl
 ```
 
 
@@ -198,7 +205,7 @@ python ChatUniVi/eval/evaluate/evaluate_benchmark_3_context.py \
 
 # Temporal Understanding
 python ChatUniVi/eval/evaluate/evaluate_benchmark_4_temporal.py \
---pred_path results/answer-video-generic.jsonl \
+--pred_path results/answer-video-temporal.jsonl \
 --output_dir results/temporal \
 --output_json results/review-video-temporal.jsonl \
 --api_key [openai api key] \
@@ -303,6 +310,15 @@ python ChatUniVi/eval/model_video_qa.py \
 --answers-list ChatUniVi/eval/questions/video_qa/msvd_a_list.json \
 --answers-file results/answer-msvd-qa.jsonl
 
+# TGIF QA
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python ChatUniVi/eval/model_video_qa.py \
+--model-path ${model path} \
+--question-file ChatUniVi/eval/questions/video_qa/tgif_qa.json \
+--video-folder ${video folder} \
+--answers-list ChatUniVi/eval/questions/video_qa/tgif_a_list.json \
+--answers-file results/answer-tgif-qa.jsonl
+
 # ActivityNet QA
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 python ChatUniVi/eval/model_video_qa.py \
@@ -328,6 +344,14 @@ python ChatUniVi/eval/evaluate/evaluate_video_qa.py \
 --pred_path results/answer-msvd-qa.jsonl \
 --output_dir results/msvd-qa \
 --output_json results/review-msvd-qa.jsonl \
+--api_key [openai api key] \
+--num_tasks 1
+
+# TGIF QA
+python ChatUniVi/eval/evaluate/evaluate_video_qa.py \
+--pred_path results/answer-tgif-qa.jsonl \
+--output_dir results/tgif-qa \
+--output_json results/review-tgif-qa.jsonl \
 --api_key [openai api key] \
 --num_tasks 1
 
