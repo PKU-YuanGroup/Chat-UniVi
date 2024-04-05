@@ -29,6 +29,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/science-question-answering-on-scienceqa)](https://paperswithcode.com/sota/science-question-answering-on-scienceqa?p=chat-univi-unified-visual-representation) <br>
 
 ## 📣 News
+* **[2024/04/05]** **Chat-UniVi** has been selected as a **Highlight** paper at CVPR 2024! (Top 3% of 11532 submissions).
 * **[2024/02/27]** Our **Chat-UniVi** has been accepted by CVPR 2024!
 * **[2024/01/05]**  We enhance the video loading code by [introducing support for variable-length videos](https://github.com/PKU-YuanGroup/Chat-UniVi/blob/d216cb52bff5ebf6e41eaa56d07a85568e294651/ChatUniVi/eval/model_video_general.py#L29). This improvement involves eliminating the previous zero-filling operation on the video. We find that this updated video loading method significantly boosts performance ([Results](https://github.com/PKU-YuanGroup/Chat-UniVi?tab=readme-ov-file#videoqa)).
 * **[2023/12/05]**  The visualization script is available at [VISUALIZATION.md](VISUALIZATION.md).
