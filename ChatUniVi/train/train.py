@@ -57,6 +57,7 @@ class ModelArguments:
     mm_use_im_patch_token: bool = field(default=True)
     mm_vision_select_feature: Optional[str] = field(default="patch")
 
+    mm_projector_type: Optional[str] = field(default='linear')
     model_use: str = field(default="BASE")
     mm_use_box_start_end: bool = field(default=False)
 

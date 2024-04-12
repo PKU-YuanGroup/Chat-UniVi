@@ -5,6 +5,7 @@ from .multimodal_encoder.builder import build_vision_tower
 from ChatUniVi.constants import *
 from .cluster import CTM, TCBlock
 from collections import OrderedDict
+from .multimodal_projector.builder import build_vision_projector
 
 
 class MetaModel:
@@ -58,8 +59,8 @@ class MetaModel:
         else:
             self.vision_tower = vision_tower
 
-        if not hasattr(self, 'mm_projector') or not self.mm_projector.weight.size(0):
-            self.mm_projector = nn.Linear(self.config.mm_hidden_size, self.config.hidden_size)
+        if not hasattr(self, 'mm_projector'):
+            self.mm_projector = build_vision_projector(self.config)
 
         if pretrain_mm_mlp_adapter is not None:
             mm_projector_weights = torch.load(pretrain_mm_mlp_adapter, map_location='cpu')
