@@ -39,3 +39,14 @@ SQA = {
     "chat_path": "${PATH}/llava_train_QCM-LEA.json",
     "ScienceQA": "${PATH}/scienceqa/train",
 }
+
+Pretrain_valley_llava = {
+    "chat_path": "${PATH}/valley_llavaimage.json",
+    "valley": "${PATH}/Data",
+    "llava": "${PATH}/Data",  # from llava v1.5
+}
+
+LLaVA = {
+    "chat_path": "${PATH}/llavaimage_tune.json",
+    "llava": "${PATH}/Data",  # from llava v1.5
+}

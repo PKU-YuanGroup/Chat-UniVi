@@ -1,9 +1,108 @@
 # Chat-UniVi v1.5
 Following LLaVA v1.5, we add grounding data and visual question-answering (VQA) data into the training dataset, enhancing the model's reasoning capabilities.
 
-The training scripts, and model weights will be released shortly.
+## 1. Data
 
-## Results
+<div align="center">
+<table border="1" width="100%">
+    <tr align="center">
+        <th>Datasets</th><th>Baidu Disk</th>
+    </tr>
+    <tr align="center">
+        <td>Image pretraining (From LLaVA v1.5)</td><td><a href="https://pan.baidu.com/s/17GYcE69FcJjjUM0e4Gad2w?pwd=9ga3">Link</a></td>
+    </tr>
+    </tr>
+    <tr align="center">
+        <td>Image tuning (From LLaVA v1.5)</td><td><a href="https://pan.baidu.com/s/1l-jT6t_DlN5DTklwArsqGw?pwd=o6ko">Link</a></td>
+    </tr>
+    </tr>
+    <tr align="center">
+        <td>Video pretraining (From Valley)</td><td><a href="https://pan.baidu.com/s/1jluOimE7mmihEBfnpwwCew?pwd=jyjz">Link</a></td>
+    </tr>
+    </tr>
+</table>
+</div>
+
+## 2. Train the model
+### Stage1: Multimodal Pre-training
+```
+deepspeed \
+--include localhost:0,1,2,3,4,5,6,7 \
+--master_port=29602 \
+ChatUniVi/train/train_mem.py \
+--deepspeed scripts/zero3.json \
+--model_name_or_path ${LLM model path} \
+--version v1 \
+--model_use PRETUNEv1.5 \
+--dataset_use Pretrain \
+--vision_tower openai/clip-vit-large-patch14-336 \
+--tune_mm_mlp_adapter True \
+--mm_vision_select_layer -2 \
+--mm_use_im_start_end False \
+--mm_use_im_patch_token False \
+--bf16 True \
+--output_dir ${stage1 save path} \
+--num_train_epochs 1 \
+--per_device_train_batch_size 16 \
+--per_device_eval_batch_size 4 \
+--gradient_accumulation_steps 1 \
+--evaluation_strategy "no" \
+--save_strategy "steps" \
+--save_steps 24000 \
+--save_total_limit 1 \
+--learning_rate 2e-3 \
+--weight_decay 0. \
+--warmup_ratio 0.03 \
+--lr_scheduler_type "cosine" \
+--logging_steps 1 \
+--tf32 True \
+--model_max_length 2048 \
+--gradient_checkpointing True \
+--dataloader_num_workers 4 \
+--lazy_preprocess True \
+--report_to wandb
+```
+
+### Stage2: Joint Instruction Tuning
+```
+deepspeed \
+--include localhost:0,1,2,3,4,5,6,7 \
+--master_port=29601 \
+ChatUniVi/train/train_mem.py \
+--deepspeed scripts/zero2.json \
+--model_name_or_path ${LLM model path} \
+--version v1 \
+--model_use FINETUNE \
+--dataset_use FINETUNEv1.5 \
+--vision_tower openai/clip-vit-large-patch14-336 \
+--pretrain_mm_mlp_adapter ${stage1 save path}/mm_projector.bin \
+--mm_vision_select_layer -2 \
+--mm_use_im_start_end False \
+--mm_use_im_patch_token False \
+--bf16 True \
+--output_dir ${stage2 save path} \
+--num_train_epochs 2 \
+--per_device_train_batch_size 16 \
+--per_device_eval_batch_size 4 \
+--gradient_accumulation_steps 1 \
+--evaluation_strategy "no" \
+--save_strategy "steps" \
+--save_steps 50000 \
+--save_total_limit 1 \
+--learning_rate 2e-5 \
+--weight_decay 0. \
+--warmup_ratio 0.03 \
+--lr_scheduler_type "cosine" \
+--logging_steps 1 \
+--tf32 True \
+--model_max_length 2048 \
+--gradient_checkpointing True \
+--dataloader_num_workers 4 \
+--lazy_preprocess True \
+--report_to wandb
+```
+
+## 3. Results
 ### Image Understanding Benchmarks
 <div align="center">
 <table border="1" width="100%">
@@ -81,11 +180,3 @@ The training scripts, and model weights will be released shortly.
     </tr>
 </table>
 </div>
-
-## 1. Conda environment
-
-## 2. Pre-trained model
-
-## 3. Train the model
-
-## 4. Evaluate the model
