@@ -2,6 +2,7 @@
 Following LLaVA v1.5, we add grounding data and visual question-answering (VQA) data into the training dataset, enhancing the model's reasoning capabilities.
 
 ## 1. Data
+Download the training annotations. You can download from https://huggingface.co/datasets/Chat-UniVi/Chat-UniVi-Instruct/tree/main/v1.5_train_json.
 
 <div align="center">
 <table border="1" width="100%">
