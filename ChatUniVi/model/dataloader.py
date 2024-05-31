@@ -51,7 +51,7 @@ def _get_rawvideo_dec(video_path, image_processor, max_frames=64, image_resoluti
 
         patch_images = [image_processor.preprocess(img, return_tensors='pt')['pixel_values'][0] for img in patch_images]
         slice_len = len(patch_images)
-
+        return  patch_images, slice_len
         max_video_length = max_video_length if max_video_length > slice_len else slice_len
         if slice_len < 1:
             pass
