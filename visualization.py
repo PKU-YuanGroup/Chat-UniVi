@@ -30,7 +30,7 @@ def merge(image, token_dict, patch_size=14, alpha=0.2, line_color=np.array([200,
     img = np.asarray(image, dtype=np.uint8).copy()
     h, w, _ = img.shape
 
-    patch_num_h, patch_num_w = w // patch_size, w // patch_size
+    patch_num_h, patch_num_w = h // patch_size, w // patch_size
 
     color_map = {}
     idx = token_dict["idx_token"].tolist()[0]
