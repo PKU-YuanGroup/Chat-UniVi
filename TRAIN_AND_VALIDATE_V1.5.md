@@ -34,8 +34,8 @@ ChatUniVi/train/train_mem.py \
 --deepspeed scripts/zero3.json \
 --model_name_or_path ${LLM model path} \
 --version v1 \
---model_use PRETUNEv1.5 \
---dataset_use Pretrain \
+--model_use PRETUNE \
+--dataset_use Pretrainv1.5 \
 --vision_tower openai/clip-vit-large-patch14-336 \
 --tune_mm_mlp_adapter True \
 --mm_vision_select_layer -2 \
