@@ -318,7 +318,7 @@ def _get_rawvideo_dec(video_path, image_processor, max_frames=MAX_IMAGE_LENGTH, 
 
 if __name__ == '__main__':
     # Model Parameter
-    model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"
+    model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"、"Chat-UniVi/Chat-UniVi-v1.5"
     video_path = ${video_path}
 
     # The number of visual tokens varies with the length of the video. "max_frames" is the maximum number of frames.
@@ -422,7 +422,7 @@ from PIL import Image
 
 if __name__ == '__main__':
     # Model Parameter
-    model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"
+    model_path = "Chat-UniVi/Chat-UniVi"  # or "Chat-UniVi/Chat-UniVi-13B"、"Chat-UniVi/Chat-UniVi-v1.5"
     image_path = ${image_path}
 
     # Input Text
