@@ -28,6 +28,21 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/zeroshot-video-question-answer-on-msvd-qa)](https://paperswithcode.com/sota/zeroshot-video-question-answer-on-msvd-qa?p=chat-univi-unified-visual-representation) <br>
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/chat-univi-unified-visual-representation/science-question-answering-on-scienceqa)](https://paperswithcode.com/sota/science-question-answering-on-scienceqa?p=chat-univi-unified-visual-representation) <br>
 
+<details open><summary>💡 I also have other LLM projects that may interest you ✨. </summary><p>
+<!--  may -->
+    
+> [**MoH: Multi-Head Attention as Mixture-of-Head Attention**](https://github.com/SkyworkAI/MoH) <br>
+> Peng Jin, Bo Zhu, Li Yuan, Shuicheng Yan <br>
+[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/SkyworkAI/MoH)  [![github](https://img.shields.io/github/stars/SkyworkAI/MoH.svg?style=social)](https://github.com/SkyworkAI/MoH) [![arXiv](https://img.shields.io/badge/Arxiv-2410.11842-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2410.11842) <br>
+    
+> [**MoE++: Accelerating Mixture-of-Experts Methods with Zero-Computation Experts**](https://github.com/SkyworkAI/MoE-plus-plus) <br>
+> Peng Jin, Bo Zhu, Li Yuan, Shuicheng Yan <br>
+[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/SkyworkAI/MoE-plus-plus)  [![github](https://img.shields.io/github/stars/SkyworkAI/MoE-plus-plus.svg?style=social)](https://github.com/SkyworkAI/MoE-plus-plus) [![arXiv](https://img.shields.io/badge/Arxiv-2410.07348-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2410.07348) <br>
+
+-->
+
+</p></details>
+
 ## 📣 News
 * **[2024/04/05]** We've revised the temporal evaluation performance of video understanding, resulting in an actual model performance of 47.9 instead of the previously stated 57.8. We sincerely apologize for any inconvenience our oversight may have caused you.
 * **[2024/04/05]** **Chat-UniVi** has been selected as a **Highlight** paper at CVPR 2024! (Top 3% of 11532 submissions).
