@@ -61,8 +61,10 @@ class Chat:
         f_end = int(min(1000000000 if end_time is None else end_time * fps, len(vreader) - 1))
         num_frames = f_end - f_start + 1
         if num_frames > 0:
-            sample_fps = int(video_framerate)
-            t_stride = int(round(float(fps) / sample_fps))
+            sample_fps = float(video_framerate)
+            if not sample_fps > 0:
+                raise ValueError("video_framerate must be positive")
+            t_stride = max(1, round(float(fps) / sample_fps))
 
             all_pos = list(range(f_start, f_end + 1, t_stride))
             if len(all_pos) > max_frames:
